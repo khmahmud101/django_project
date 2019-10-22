@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'books',
     'department',
     'lmsmain',
+    'student',
+
     
 ]
 
