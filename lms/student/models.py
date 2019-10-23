@@ -19,7 +19,7 @@ class Student(models.Model):
 
 
 class register_student(Student):
-    
+
     def __str__(self):
         return "Name: {} ID: {}".format(self.name,self.student_id)
 
