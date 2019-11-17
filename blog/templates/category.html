@@ -1,0 +1,32 @@
+
+
+{% extends 'base.html'%}
+{% load static %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <h2>Category: {{ cat.name }}</h2>
+</div>
+
+		{% for p in post %}
+            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
+				<figure>
+					<a href="{% url 'single_post' id=p.id %}"><img src="{{ p.image.url }}" alt="Image" class="img-responsive"></a>
+				</figure>
+				<span><a href="{% url 'category' name=p.category.name %}">{{ p.category.name }}</a></span>
+				<h2 class="fh5co-article-title"><a href="{% url 'single_post' id=p.id %}">{{ p.title }}</a></h2>
+				<span class="fh5co-meta fh5co-date">{{ p.posted_on }}</span>
+			</article>
+			<div class="clearfix visible-xs-block"></div>
+		{% endfor%}
+
+{% endblock %}
+
+
+
+
