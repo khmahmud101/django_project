@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ product.title }}<a href="{% url 'update_cart' product.slug %}" class="pull-right">Add to Cart</a></h1>
+    <img src="{{ product.image.url }}"/>
+    <p>{{ product.description|linebreaks }}</p>
+{% endblock %}

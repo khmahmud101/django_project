@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} MyShop {% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+                <a href="{% url 'single_product' product.slug %}">{{ product.title }}</a>
+                {{ product.slug }}
+                <img src="{{  product.image.url }}"/>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
